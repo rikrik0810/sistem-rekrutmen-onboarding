@@ -44,8 +44,8 @@ Baru -> Screening -> Interview -> Offering -> Diterima
 ## Cara Menjalankan
 
 ```bash
-git clone <link-repository-ini>
-cd <nama-folder-repository>
+git clone https://github.com/rikrik0810/sistem-rekrutmen-onboarding.git
+cd sistem-rekrutmen-onboarding
 python main.py
 ```
 
@@ -77,7 +77,7 @@ Contoh input dan output untuk setiap menu tersedia di file `Panduan_Input_Progra
 ## Struktur Folder
 
 ```
-sistem_rekrutmen_dan_onboarding/
+sistem-rekrutmen-onboarding/
 ├── main.py                     # Titik masuk program (menu CLI)
 ├── models/
 │   ├── base.py                 # Evaluasi (Abstract Base Class)
