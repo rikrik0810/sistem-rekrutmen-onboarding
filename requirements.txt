@@ -1,0 +1,4 @@
+# Program ini hanya memakai library bawaan Python (standard library).
+# Tidak ada dependensi eksternal yang perlu dipasang.
+# Jika nanti menambahkan unit test (UAS), tambahkan baris berikut:
+# pytest

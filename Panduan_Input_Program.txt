@@ -1,0 +1,619 @@
+==============================================================================
+PANDUAN INPUT PROGRAM
+SISTEM REKRUTMEN & ONBOARDING - Proyek OOP
+==============================================================================
+
+Status pipeline kandidat:
+  Baru -> Screening -> Interview -> Offering -> Diterima
+  (dari tahap mana pun boleh ke Ditolak; Diterima dan Ditolak bersifat final)
+
+
+==============================================================================
+MENU 1 - BUAT LOWONGAN KERJA
+==============================================================================
+
+[Contoh A: Lowongan valid, langsung dipublikasikan (jawab y)]
+Pilih menu: 1
+--- BUAT LOWONGAN KERJA ---
+Judul posisi: Software Engineer
+Divisi: IT
+Skor threshold kelolosan (0-100): 60
+Batas lamar YYYY-MM-DD (kosongkan jika tidak ada): 2026-12-31
+Kualifikasi/keyword (pisahkan dengan koma): Python, SQL, OOP, Git
+Lowongan berhasil dibuat dengan ID L-QU7Q (status Draft).
+Publikasikan sekarang? (y/n): y
+Lowongan dipublikasikan dan siap menerima lamaran.
+----------------------------------------
+
+[Contoh B: Lowongan valid, dibiarkan Draft (jawab n)]
+----------------------------------------
+Pilih menu: 1
+--- BUAT LOWONGAN KERJA ---
+Judul posisi: Data Analyst
+Divisi: Analytics
+Skor threshold kelolosan (0-100): 50
+Batas lamar YYYY-MM-DD (kosongkan jika tidak ada): 
+Kualifikasi/keyword (pisahkan dengan koma): Excel, SQL, Statistik
+Lowongan berhasil dibuat dengan ID L-SVGS (status Draft).
+Publikasikan sekarang? (y/n): n
+----------------------------------------
+
+[Contoh C: Gagal - threshold di luar 0-100]
+----------------------------------------
+Pilih menu: 1
+--- BUAT LOWONGAN KERJA ---
+Judul posisi: Admin Gudang
+Divisi: Operasional
+Skor threshold kelolosan (0-100): 150
+Batas lamar YYYY-MM-DD (kosongkan jika tidak ada): 
+
+[DITOLAK] Skor threshold harus berada di persentase 0.0 hingga 100.0
+----------------------------------------
+
+[Contoh D: Input angka tidak valid (diminta mengulang)]
+----------------------------------------
+Pilih menu: 1
+--- BUAT LOWONGAN KERJA ---
+Judul posisi: UI Designer
+Divisi: Desain
+Skor threshold kelolosan (0-100): enam puluh
+  ! Masukkan angka yang valid.
+Skor threshold kelolosan (0-100): 60
+Batas lamar YYYY-MM-DD (kosongkan jika tidak ada): 
+Kualifikasi/keyword (pisahkan dengan koma): Figma, Prototyping
+Lowongan berhasil dibuat dengan ID L-D3YB (status Draft).
+Publikasikan sekarang? (y/n): n
+----------------------------------------
+
+==============================================================================
+MENU 2 - PUBLIKASIKAN LOWONGAN
+==============================================================================
+
+[Contoh A: Berhasil, publikasikan lowongan Draft (Data Analyst)]
+----------------------------------------
+Pilih menu: 2
+--- PUBLIKASIKAN LOWONGAN ---
+ID lowongan: L-SVGS
+Lowongan [L-SVGS] berhasil dipublikasikan.
+----------------------------------------
+
+[Contoh B: Gagal - ID lowongan tidak ada]
+----------------------------------------
+Pilih menu: 2
+--- PUBLIKASIKAN LOWONGAN ---
+ID lowongan: L-XXXX
+
+[TIDAK DITEMUKAN] GAGAL: Lowongan dengan ID 'L-XXXX' tidak ditemukan.
+----------------------------------------
+
+==============================================================================
+MENU 3 - LIHAT DAFTAR LOWONGAN
+==============================================================================
+
+[Contoh: Menampilkan semua lowongan beserta status publikasinya]
+----------------------------------------
+Pilih menu: 3
+--- DAFTAR LOWONGAN ---
+[L-QU7Q] Software Engineer - Divisi IT (Dipublikasikan)
+Batas Lamar: 2026-12-31 | Minimal Skor (Threshold): 60.0
+Kualifikasi (Keywords): Python, SQL, OOP, Git
+
+[L-SVGS] Data Analyst - Divisi Analytics (Dipublikasikan)
+Batas Lamar: Tidak ditentukan | Minimal Skor (Threshold): 50.0
+Kualifikasi (Keywords): Excel, SQL, Statistik
+
+[L-D3YB] UI Designer - Divisi Desain (Draft)
+Batas Lamar: Tidak ditentukan | Minimal Skor (Threshold): 60.0
+Kualifikasi (Keywords): Figma, Prototyping
+----------------------------------------
+
+==============================================================================
+MENU 4 - KANDIDAT MELAMAR
+==============================================================================
+
+[Contoh A: Berhasil - CV memuat semua keyword (Erik)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Erik Santoso
+Email: erik@email.com
+No. telepon (boleh kosong): 08123456789
+Teks CV (satu baris): Lulusan Teknik Informatika, menguasai Python, SQL, dan OOP. Pernah memakai Git untuk proyek kelompok.
+Lamaran diterima. ID kandidat Anda: K-98XW
+----------------------------------------
+
+[Contoh B: Berhasil - CV memuat sebagian keyword (Albeth)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Albeth Putri
+Email: albeth@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Saya menguasai Python dan SQL untuk analisis data.
+Lamaran diterima. ID kandidat Anda: K-FATC
+----------------------------------------
+
+[Contoh C: Berhasil - CV tidak memuat keyword (Budi)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Budi Hartono
+Email: budi@email.com
+No. telepon (boleh kosong): 081200001111
+Teks CV (satu baris): Berpengalaman sebagai kasir dan pelayan restoran.
+Lamaran diterima. ID kandidat Anda: K-GIBQ
+----------------------------------------
+
+[Contoh D: Berhasil - kandidat tambahan untuk demo menu 6 (Citra)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Citra Dewi
+Email: citra@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Menguasai Python, SQL, OOP, dan Git.
+Lamaran diterima. ID kandidat Anda: K-P4SX
+----------------------------------------
+
+[Contoh E: Berhasil - kandidat tambahan untuk demo menu 8 (Fajar)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Fajar Nugroho
+Email: fajar@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Python, SQL, OOP dan Git sudah saya kuasai.
+Lamaran diterima. ID kandidat Anda: K-RXQK
+----------------------------------------
+
+[Contoh F: Gagal - email yang sama melamar dua kali ke lowongan yang sama]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Erik Santoso
+Email: erik@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Python SQL OOP Git
+
+[DITOLAK] Email 'erik@email.com' sudah melamar ke lowongan [L-QU7Q].
+----------------------------------------
+
+[Contoh G: Gagal - email tidak valid]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Gita
+Email: gita-email
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Python
+
+[DITOLAK] Format email 'gita-email' tidak valid.
+----------------------------------------
+
+[Contoh H: Gagal - teks CV kosong]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-QU7Q
+Nama lengkap: Gita
+Email: gita@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): 
+
+[DITOLAK] Kandidat wajib mengisi teks CV sebelum melamar.
+----------------------------------------
+
+[Contoh I: Gagal - lowongan masih Draft (UI Designer belum dipublikasikan)]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-D3YB
+Nama lengkap: Gita
+Email: gita@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Figma
+
+[DITOLAK] Lowongan [L-D3YB] tidak menerima lamaran (belum dipublikasikan atau sudah ditutup).
+----------------------------------------
+
+[Contoh J: Gagal - ID lowongan tidak ada]
+----------------------------------------
+Pilih menu: 4
+--- KANDIDAT MELAMAR ---
+ID lowongan yang dilamar: L-XXXX
+Nama lengkap: Gita
+Email: gita@email.com
+No. telepon (boleh kosong): 
+Teks CV (satu baris): Python
+
+[TIDAK DITEMUKAN] GAGAL: Lowongan dengan ID 'L-XXXX' tidak ditemukan.
+----------------------------------------
+
+==============================================================================
+MENU 5 - SCREENING CV OTOMATIS (threshold lowongan = 60)
+==============================================================================
+
+[Contoh A: LOLOS - 4 dari 4 keyword cocok (Erik)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-98XW
+Skor CV      : 100.0% (threshold 60.0%)
+Keyword cocok: Python, SQL, OOP, Git
+Hasil        : LOLOS -> status Interview
+----------------------------------------
+
+[Contoh B: TIDAK LOLOS - 2 dari 4 keyword cocok = 50% (Albeth)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-FATC
+Skor CV      : 50.0% (threshold 60.0%)
+Keyword cocok: Python, SQL
+Hasil        : TIDAK LOLOS -> status Ditolak
+----------------------------------------
+
+[Contoh C: TIDAK LOLOS - 0 keyword cocok (Budi)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-GIBQ
+Skor CV      : 0.0% (threshold 60.0%)
+Keyword cocok: -
+Hasil        : TIDAK LOLOS -> status Ditolak
+----------------------------------------
+
+[Contoh D: LOLOS - kandidat untuk demo menu 6 (Citra)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-P4SX
+Skor CV      : 100.0% (threshold 60.0%)
+Keyword cocok: Python, SQL, OOP, Git
+Hasil        : LOLOS -> status Interview
+----------------------------------------
+
+[Contoh E: LOLOS - kandidat untuk demo menu 8 (Fajar)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-RXQK
+Skor CV      : 100.0% (threshold 60.0%)
+Keyword cocok: Python, SQL, OOP, Git
+Hasil        : LOLOS -> status Interview
+----------------------------------------
+
+[Contoh F: Gagal - screening ulang kandidat yang sudah Interview]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-98XW
+
+[DITOLAK] Screening hanya untuk kandidat berstatus Baru/Screening, sedangkan status saat ini 'Interview'.
+----------------------------------------
+
+[Contoh G: Gagal - ID kandidat tidak ada (ApplicationNotFoundException)]
+----------------------------------------
+Pilih menu: 5
+--- SCREENING CV OTOMATIS ---
+ID kandidat: K-XXXX
+
+[TIDAK DITEMUKAN] GAGAL: Kandidat dengan ID 'K-XXXX' tidak terdaftar di pipeline.
+----------------------------------------
+
+==============================================================================
+MENU 6 - UBAH STATUS PIPELINE
+==============================================================================
+
+[Contoh A: Berhasil - Interview ke Offering (Erik)]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-98XW
+Status saat ini: Interview | Tahap berikutnya yang diizinkan: ['Offering', 'Ditolak']
+Status baru: Offering
+Status berhasil diubah menjadi Offering.
+----------------------------------------
+
+[Contoh B: Gagal - melompat tahap, Offering ke Interview tidak ada di alur]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-98XW
+Status saat ini: Offering | Tahap berikutnya yang diizinkan: ['Diterima', 'Ditolak']
+Status baru: Interview
+
+[DITOLAK] Perpindahan 'Offering' -> 'Interview' tidak diizinkan. Tahap berikutnya yang valid: ['Diterima', 'Ditolak']
+----------------------------------------
+
+[Contoh C: Berhasil - HR menolak manual walau skor CV lolos (Citra)]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-P4SX
+Status saat ini: Interview | Tahap berikutnya yang diizinkan: ['Offering', 'Ditolak']
+Status baru: Ditolak
+Status berhasil diubah menjadi Ditolak.
+----------------------------------------
+
+[Contoh D: Gagal - status final (Citra sudah Ditolak)]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-P4SX
+Status saat ini: Ditolak | Tahap berikutnya yang diizinkan: tidak ada (status final)
+Status baru: Interview
+
+[DITOLAK] Status 'Ditolak' sudah final dan tidak dapat diubah.
+----------------------------------------
+
+[Contoh E: Gagal - status tidak valid]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-RXQK
+Status saat ini: Interview | Tahap berikutnya yang diizinkan: ['Offering', 'Ditolak']
+Status baru: Lulus
+
+[DITOLAK] Status 'Lulus' tidak valid. Pilih dari: ['Baru', 'Screening', 'Interview', 'Offering', 'Diterima', 'Ditolak']
+----------------------------------------
+
+[Contoh F: Gagal - status yang sama]
+----------------------------------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-RXQK
+Status saat ini: Interview | Tahap berikutnya yang diizinkan: ['Offering', 'Ditolak']
+Status baru: Interview
+
+[DITOLAK] Kandidat sudah berstatus 'Interview'.
+----------------------------------------
+
+[Contoh G: Gagal - ID kandidat tidak ada]-----------------
+Pilih menu: 6
+--- UBAH STATUS PIPELINE ---
+ID kandidat: K-XXXX
+
+[TIDAK DITEMUKAN] GAGAL: Kandidat dengan ID 'K-XXXX' tidak terdaftar di pipeline.
+----------------------------------------
+
+==============================================================================
+MENU 7 - JADWALKAN WAWANCARA
+==============================================================================
+
+[Contoh A: Berhasil - tipe HR (Fajar, status Interview)]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-RXQK
+Nama interviewer: Budi Hartono
+Tipe (HR/Teknis): HR
+Waktu (contoh 2026-11-05 10:00): 2026-11-20 10:00
+Jadwal tersimpan:
+Evaluasi Wawancara [WW-K-RXQK] - Jadwal: 2026-11-20 10:00
+Pewawancara: Budi Hartono (HR)
+Nilai Teknis: 0.0 | Soft Skill: 0.0
+Skor Akhir: 0.0
+----------------------------------------
+
+[Contoh B: Berhasil - jadwal ulang, tipe Teknis (huruf kecil tetap diterima)]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-RXQK
+Nama interviewer: Rina Wijaya
+Tipe (HR/Teknis): teknis
+Waktu (contoh 2026-11-05 10:00): 2026-11-21 14:00
+Jadwal tersimpan:
+Evaluasi Wawancara [WW-K-RXQK] - Jadwal: 2026-11-21 14:00
+Pewawancara: Rina Wijaya (Teknis)
+Nilai Teknis: 0.0 | Soft Skill: 0.0
+Skor Akhir: 0.0
+----------------------------------------
+
+[Contoh C: Gagal - tipe bukan HR/Teknis]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-RXQK
+Nama interviewer: Rina Wijaya
+Tipe (HR/Teknis): Final
+Waktu (contoh 2026-11-05 10:00): 2026-11-21 14:00
+
+[DITOLAK] Tipe interview 'Final' tidak valid. Pilih: ['HR', 'Teknis']
+----------------------------------------
+
+[Contoh D: Gagal - kandidat bukan berstatus Interview (Albeth, Ditolak)]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-FATC
+Nama interviewer: Rina Wijaya
+Tipe (HR/Teknis): HR
+Waktu (contoh 2026-11-05 10:00): 2026-11-21 14:00
+
+[DITOLAK] Wawancara hanya untuk kandidat berstatus Interview, sedangkan status saat ini 'Ditolak'.
+----------------------------------------
+
+[Contoh E: Gagal - nama interviewer kosong]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-RXQK
+Nama interviewer: 
+Tipe (HR/Teknis): HR
+Waktu (contoh 2026-11-05 10:00): 2026-11-21 14:00
+
+[DITOLAK] Nama interviewer tidak boleh kosong.
+----------------------------------------
+
+[Contoh F: Gagal - ID kandidat tidak ada]
+----------------------------------------
+Pilih menu: 7
+--- JADWALKAN WAWANCARA ---
+ID kandidat: K-XXXX
+Nama interviewer: Rina Wijaya
+Tipe (HR/Teknis): HR
+Waktu (contoh 2026-11-05 10:00): 2026-11-21 14:00
+
+[TIDAK DITEMUKAN] GAGAL: Kandidat dengan ID 'K-XXXX' tidak terdaftar di pipeline.
+----------------------------------------
+
+==============================================================================
+MENU 8 - INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%)
+==============================================================================
+
+[Contoh A: Berhasil - 85 teknis, 90 soft skill (Fajar) = 87.0]
+----------------------------------------
+Pilih menu: 8
+--- INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%) ---
+ID kandidat: K-RXQK
+Nilai teknis (0-100): 85
+Nilai soft skill (0-100): 90
+Penilaian tersimpan. Skor akhir wawancara: 87.0
+----------------------------------------
+
+[Contoh B: Gagal - nilai di luar 0-100]
+----------------------------------------
+Pilih menu: 8
+--- INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%) ---
+ID kandidat: K-RXQK
+Nilai teknis (0-100): 150
+Nilai soft skill (0-100): 90
+
+[DITOLAK] Skor harus berada di dalam rentang 0.0 sampai 100.0.
+----------------------------------------
+
+[Contoh C: Input bukan angka, program meminta mengulang (nilai lama ditimpa dengan nilai yang sama)]
+----------------------------------------
+Pilih menu: 8
+--- INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%) ---
+ID kandidat: K-RXQK
+Nilai teknis (0-100): abc
+  ! Masukkan angka yang valid.
+Nilai teknis (0-100): 85
+Nilai soft skill (0-100): 90
+Penilaian tersimpan. Skor akhir wawancara: 87.0
+----------------------------------------
+
+[Contoh D: Gagal - wawancara belum dijadwalkan (Erik)]
+----------------------------------------
+Pilih menu: 8
+--- INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%) ---
+ID kandidat: K-98XW
+Nilai teknis (0-100): 80
+Nilai soft skill (0-100): 80
+
+[DITOLAK] Wawancara kandidat ini belum dijadwalkan.
+----------------------------------------
+
+[Contoh E: Gagal - ID kandidat tidak ada]
+----------------------------------------
+Pilih menu: 8
+--- INPUT NILAI WAWANCARA (Teknis 60% + Soft Skill 40%) ---
+ID kandidat: K-XXXX
+Nilai teknis (0-100): 80
+Nilai soft skill (0-100): 80
+
+[TIDAK DITEMUKAN] GAGAL: Kandidat dengan ID 'K-XXXX' tidak terdaftar di pipeline.
+----------------------------------------
+
+==============================================================================
+MENU 9 - KOMPARASI SKOR KANDIDAT
+==============================================================================
+
+[Contoh A: Peringkat kandidat yang sudah dinilai (Fajar 87.0 vs Hana 66.0)]
+----------------------------------------
+Pilih menu: 9
+=== LEADERBOARD (KOMPARASI KANDIDAT) ===
+Rank 1. Fajar Nugroho (ID: K-RXQK) -> Skor Akhir: 87.0
+Rank 2. Hana Lestari (ID: K-CW2J) -> Skor Akhir: 66.0
+----------------------------------------
+
+==============================================================================
+MENU 10 - TAMPILKAN STATUS PIPELINE
+==============================================================================
+
+[Contoh: Rekap seluruh kandidat dan status terbarunya]
+----------------------------------------
+Pilih menu: 10
+=============================================
+         REKAP PIPELINE REKRUTMEN
+=============================================
+Total Pelamar Aktif: 6 orang
+
+[K-98XW] Erik Santoso (erik@email.com) - Status: Offering | Lowongan: L-QU7Q
+[K-FATC] Albeth Putri (albeth@email.com) - Status: Ditolak | Lowongan: L-QU7Q
+[K-GIBQ] Budi Hartono (budi@email.com) - Status: Ditolak | Lowongan: L-QU7Q
+[K-P4SX] Citra Dewi (citra@email.com) - Status: Ditolak | Lowongan: L-QU7Q
+[K-RXQK] Fajar Nugroho (fajar@email.com) - Status: Interview | Lowongan: L-QU7Q
+[K-CW2J] Hana Lestari (hana@email.com) - Status: Interview | Lowongan: L-QU7Q
+=============================================
+----------------------------------------
+
+==============================================================================
+MENU 11 - ISI DATA CONTOH (sesi baru, program baru dijalankan)
+==============================================================================
+
+[Contoh: Memuat 1 lowongan + 3 pelamar secara otomatis, lalu cek dengan menu 10]
+----------------------------------------
+Pilih menu: 11
+Data contoh dimuat: lowongan L-DL81 dan 3 pelamar.
+
+>> Pilih menu: 10
+=============================================
+         REKAP PIPELINE REKRUTMEN
+=============================================
+Total Pelamar Aktif: 3 orang
+
+[K-EIDC] Erik (erik@email.com) - Status: Baru | Lowongan: L-DL81
+[K-2GUQ] Albeth (albeth@email.com) - Status: Baru | Lowongan: L-DL81
+[K-G0EX] Budi (budi@email.com) - Status: Baru | Lowongan: L-DL81
+=============================================
+----------------------------------------
+
+==============================================================================
+MENU KOSONG - SEBELUM ADA DATA (sesi baru)
+==============================================================================
+
+[Menu 3 saat belum ada lowongan]
+----------------------------------------
+Pilih menu: 3
+--- DAFTAR LOWONGAN ---
+Belum ada lowongan.
+----------------------------------------
+
+[Menu 9 saat belum ada kandidat yang dinilai]
+----------------------------------------
+Pilih menu: 9
+Belum ada data skor untuk dikomparasi.
+----------------------------------------
+
+[Menu 10 saat belum ada pelamar]
+----------------------------------------
+Pilih menu: 10
+=============================================
+         REKAP PIPELINE REKRUTMEN
+=============================================
+Belum ada data kandidat di dalam pipeline.
+=============================================
+----------------------------------------
+
+==============================================================================
+PILIHAN MENU TIDAK VALID DAN KELUAR
+==============================================================================
+
+[Contoh A: Mengetik nomor yang tidak ada di menu]
+Pilih menu: 99
+Pilihan tidak tersedia. Pilih nomor yang ada di menu.
+
+[Contoh B: Keluar dari program]
+Pilih menu: 0
+Terima kasih. Program selesai.
